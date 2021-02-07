@@ -2,58 +2,78 @@
 #TARIK AVCI - tarikaavci@gmail.com
 #Company Management System
 
-class Employee:
+class Employees():
 
-   def __init__(self,name,age):
+    def __init__(self,name,age,language):
       self.name = name
       self.age=age
-      self.language = []
+      self.language = language
 
-   def addlanguages(self,newlanguage):
-      self.language.append(newlanguage)
-
-   def showinfo(self):
+    def languages(self):
+      for lang in self.language:
+          print(lang)
+    
+    def showinfo(self):
       print("Name: ",self.name,"\n","Age: ",self.age,"\n","Languages: ",*self.language)
       
+
+
       
-      
-class Manager(Employee):
+class Manager(Employees):
 
    pass
 
 
+
+dict_emp = {"em1": Employees("Tarık", 24, ("Turkish", "English")),
+            "em2": Employees("Tayfun", 41, ("Turkish", "English",)),
+            "em3": Employees("Ümran", 32, ("Turkish", "English", "German"))}
+
+dict_man ={ "man1": Manager("Joe", 61, ("Turkish", "Spanish", "English")),
+            "man2": Manager("Donald", 40, ("Turkish", "Spanish", "French", "English","Arabic")),
+            "man3": Manager("Vladimir", 38, ("Spanish", "English","Dutch","Russian"))}
+
+set1 = set()  #set for employees
+set2= set()   #set for manager
+
+
+def Employees_Languages():
+    
+    print("\nEmployees can speaks :")
+    print("----------------------------")
+
+   
+    for i in dict_emp:
+        if True:
+            for language in dict_emp[i].language:
+                set1.add(language)
+   
+    for language in set1:
+        print(language)
+    
+def Manager_Languages():
+    
+    print("\nManagers can speaks :")
+    print("----------------------------")
+
+   
+    for i in dict_man:
+        if True:
+            for language in dict_man[i].language:
+                set2.add(language)
+               
+    for language in set2:
+        print(language)    
+
+
+
+print("-------------------------")
 print("Company Management System")      
-print("--------------------------")
+print("-------------------------")
 
-#inputs are employee and manager
-
-en = input("Employee name: ")
-eage = input("Employee age: ")
-elang = input("Employee Language(use space between languages): ")
+Employees_Languages()
+Manager_Languages()
 
 
-mn = input("Manager name: ")
-mage = input("Manager age: ")
-mlang = input("Manager Language(use space between languages): ")
 
-
-print(list(mlang.split(" ")))
-print("\n",("\n"))
-print("Employee Information")
-E1 = Employee(en,eage)
-E1.addlanguages(elang)
-E1.showinfo()
-print("---------------------------")
-
-
-print("Manager Information")
-M1 = Manager(mn,mage)
-M1.addlanguages(mlang)
-M1.showinfo()
-
-print("---------------------------")
-#we can create information of employee this way too.
-E2=Employee("Tarik","24")
-E2.addlanguages("english")
-E2.addlanguages("turkish")
-E2.showinfo()
+#Thanks for the course.
