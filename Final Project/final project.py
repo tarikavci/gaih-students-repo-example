@@ -30,7 +30,7 @@ print("--------------------------")
 en = input("Employee name: ")
 eage = input("Employee age: ")
 elang = input("Employee Language(use space between languages): ")
-print(list(elang.split(" ")))
+
 
 mn = input("Manager name: ")
 mage = input("Manager age: ")
