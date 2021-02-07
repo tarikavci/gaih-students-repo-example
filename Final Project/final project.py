@@ -9,10 +9,6 @@ class Employees():
       self.age=age
       self.language = language
 
-    def languages(self):
-      for lang in self.language:
-          print(lang)
-  
 class Manager(Employees):
 
    pass
