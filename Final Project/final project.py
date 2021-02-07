@@ -12,13 +12,7 @@ class Employees():
     def languages(self):
       for lang in self.language:
           print(lang)
-    
-    def showinfo(self):
-      print("Name: ",self.name,"\n","Age: ",self.age,"\n","Languages: ",*self.language)
-      
-
-
-      
+  
 class Manager(Employees):
 
    pass
